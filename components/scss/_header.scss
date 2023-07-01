@@ -1,0 +1,105 @@
+@import './colors';
+$transition: 0.3s;
+
+header{
+    height: 4rem;
+    box-shadow: 0px 3px 11px 0px #0000000f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    
+        >{
+            a,ul,div{
+                display: flex;
+                align-items: center;
+            }
+        }
+    
+        .logo{
+            gap: 0.3rem;
+            font: {
+                size: 1.3rem;
+                weight: 700;
+            }
+            color: $black;
+            i{
+                color: $green;
+            }
+        }
+    
+        .menu{
+            justify-content: center;
+            gap: 1rem;
+            height: 100%;
+            li{
+                height: 100%;
+            }
+            a{
+                color: $light-grey;
+                &.active{
+                    color: $black;
+                }
+                &:hover{
+                    color: $green;
+                }
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+        }
+    
+        .icons{
+            gap: 1rem;
+            color: $dark-grey;
+            font-size: 1.1rem;
+            i{
+                &:hover{
+                    color: $green;
+                    cursor: pointer;
+                }
+                z-index: 2;
+            }
+        }
+
+        form{
+            visibility: hidden;
+            position: absolute;
+            bottom: 7rem;
+            right: 1.6rem;
+            width: 25%;
+            transition: $transition;
+            input{
+                border: none;
+                background-color: wheat;
+                padding: 0.8rem{
+                    right: 2rem;
+                };
+                border-radius: 0.3rem;
+                width: 100%;
+            }
+            button{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0.8rem;
+                color: $dark-grey;
+                cursor: pointer;
+                &:hover{
+                    color: $green;
+                }
+            }
+            &.active{
+                visibility: visible;
+                bottom: -3.5rem;
+                right: 1.6rem;
+            }
+        }
+
+    }
+}
