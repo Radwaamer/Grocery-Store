@@ -1,5 +1,5 @@
 @import './colors';
-$transition: 0.3s;
+@import './main-vars';
 
 header{
     height: 4rem;
@@ -80,7 +80,7 @@ header{
                 padding: 0.8rem{
                     right: 2rem;
                 };
-                border-radius: 0.3rem;
+                border-radius: $radius;
                 width: 100%;
             }
             button{

@@ -37,6 +37,7 @@ body{
 }
 a{
     text-decoration: none;
+    color: $black;
 }
 ul{
     list-style: none;
@@ -94,4 +95,5 @@ button{
 
 /*start import components*/
 @import './scss/header';
+@import './scss/footer';
 /*end import components*/

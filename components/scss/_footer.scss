@@ -1,0 +1,81 @@
+@import './colors';
+@import './main-vars';
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .first{
+        background-color: #F1F3F1;
+        padding: 2rem 0 3rem;
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+            gap: 1rem;
+            h3{
+                margin-bottom: 1rem;
+            }
+            ul li a{
+                display: flex;
+                gap: 0.8rem;
+                align-items: center;
+                color: $light-grey;
+                padding: 0.4rem 0;
+                width: 100%;
+                font-size: $small-font;
+                i{
+                    color: $green;
+                }
+                &:hover p{
+                    transition: $transition;
+                    transform: translateX(10px);
+                }
+            }
+            form{
+                label{
+                    color: $light-grey;
+                    font-size: $meduim-font;
+                }
+                input{
+                    background-color: $white;
+                    border-radius: $radius;
+                    padding: 0.7rem;
+                    border: none;
+                    display: block;
+                    margin: 0.9rem 0;
+                    width: 100%;
+                    &::placeholder{
+                        color: $light-grey;
+                    }
+                }
+                button{
+                    background-color: $green;
+                    color: $white;
+                    border-radius: 0.1rem;
+                    padding: 0.6rem 1.6rem;
+                    font-size: 1.07rem;
+                    cursor: pointer;
+                }
+            }
+            .payment{
+                display: flex;
+                gap: 1rem;
+                margin-top: 1.5rem;
+                img{
+                    width: 2.5rem;
+                    height: 1rem;
+                }
+            }
+        }
+    }
+
+    .second{
+        background-color: $green;
+        padding: 1.7rem 0;
+        p{
+            color: $white;
+            text-align: center;
+        }
+    }
+}
