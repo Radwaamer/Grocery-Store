@@ -1,0 +1,89 @@
+@keyframes bannerText {
+    from{
+        left: -24rem;
+    }
+    to{
+        left: 6rem;
+    }
+}
+
+@keyframes bannerImg {
+    from{
+        transform: scale(1.1);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+.home{
+    .banner{
+        width: 100%;
+        height: calc(100vh - 10rem);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .controls{
+        z-index: 2;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .left,.right{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: $white;
+            padding: 0.7rem 0.9rem;
+            box-shadow: 0 0 8px 0px #0000002e;
+            transition: $transition;
+            &:hover{
+                background-color: $green;
+                color: $white;
+            }
+        }
+        $position: 1rem;
+        .left{
+            left: $position;
+        }
+        .right{
+            right: $position;
+        }
+    }
+
+    .content{
+        height: 100%;
+        display: none;
+        animation: bannerImg 1.5s;
+        &.active{
+            display: block;
+        }
+        .text{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 6rem;
+            animation: bannerText 1.5s;
+            p{
+                color: $light-grey;
+                font-size: 1.3rem;
+            }
+            h2{
+                font-size: 2.5rem;
+                margin: 1rem 0;
+            }
+        }
+
+        .image{
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: right;
+            }
+        }
+    }
+}

@@ -1,10 +1,9 @@
-@import './colors';
-@import './main-vars';
+@import '../utilities/variables';
 
 footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
 
     .first{
         background-color: #F1F3F1;
@@ -48,14 +47,6 @@ footer{
                     &::placeholder{
                         color: $light-grey;
                     }
-                }
-                button{
-                    background-color: $green;
-                    color: $white;
-                    border-radius: 0.1rem;
-                    padding: 0.6rem 1.6rem;
-                    font-size: 1.07rem;
-                    cursor: pointer;
                 }
             }
             .payment{

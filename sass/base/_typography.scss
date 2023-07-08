@@ -1,0 +1,18 @@
+.container{
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include breakPoints("small"){
+        width: 750px;
+    }
+    @include breakPoints("medium"){
+        width: 970px;
+    }
+    @include breakPoints("large"){
+        width: 1170px;
+    }
+}
+
+.home,.shop,.about,.review,.blog,.contact{
+    margin-top: 4rem;
+}

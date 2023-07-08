@@ -1,0 +1,12 @@
+button.main-btn{
+    background-color: $green;
+    color: $white;
+    border-radius: 0.1rem;
+    padding: 0.6rem 1.6rem;
+    font-size: 1.07rem;
+    transition: $transition;
+    &:hover{
+        background-color: $black;
+        color: $white;
+    }
+}

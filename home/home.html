@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font awesome style file -->
     <link rel="stylesheet" href="../files/css/all.min.css">
-    <!-- component css file -->
-    <link rel="stylesheet" href="../components/main.css">
     <!-- main css file -->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../sass/main.css">
     <title>Home</title>
 </head>
 <body>
@@ -31,7 +29,7 @@
             </ul>
     
             <div class="icons">
-                <i class="search fa-solid fa-magnifying-glass"></i>
+                <i class="search fa-solid fa-magnifying-glass" onclick="searchForm()"></i>
                 <i class="fa-solid fa-cart-shopping"></i>
                 <i class="fa-solid fa-user"></i>
             </div>
@@ -44,148 +42,67 @@
         </div>
     </header>
 
-    <footer>
+    <section class="home">
 
-        <div class="first">
-            <div class="container">
+        <section class="banner">
 
-                <ul class="quick">
-                    <h3>Quick Links</h3>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>Home</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>Shop</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>About</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>Review</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>Blog</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>Contact</p>
-                        </a>
-                    </li>
-                </ul>
+            <div class="controls">
+                <i class="left fa-solid fa-chevron-left" onclick="prev()"></i>
+                <i class="right fa-solid fa-chevron-right" onclick="next()"></i>
+            </div>
+    
+            <div class="content active">
                 
-                <ul class="extra">
-                    <h3>Extra Links</h3>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>My Account</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>My Order</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>My Wishlist</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>My Favorite</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <p>Terms Of Use</p>
-                        </a>
-                    </li>
-                </ul>
-
-                <ul class="follow">
-                    <h3>Follow Us</h3>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            <p>Facebook</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter"></i>
-                            <p>Twitter</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-linkedin"></i>
-                            <p>Linkedin</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-instagram"></i>
-                            <p>Instagram</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-pinterest"></i>
-                            <p>Pinterest</p>
-                        </a>
-                    </li>
-                </ul>
-
-                <div class="news">
-                    <h3>Newsletter</h3>
-                    <form action="">
-                        <label for="email-news">Subscribe For Latest Updates</label>
-                        <input type="email" name="email" id="email-news" placeholder="enter your email">
-                        <button type="submit">Submit</button>
-                    </form>
-                    <div class="payment">
-                        <a href=""><img src="../files/imgs/payment methods/Visa.svg.png" alt="Visa"></a>
-                        <a href=""><img src="../files/imgs/payment methods/MasterCard.svg.webp" alt="MasterCard"></a>
-                        <a href=""><img src="../files/imgs/payment methods/PayPal.svg.png" alt="PayPal"></a>
-                    </div>
+                <div class="text">
+                    <p>Fresh And Organic</p>
+                    <h2>Upto 50% Off</h2>
+                    <button class="main-btn">Shop Now</button>
                 </div>
-
+    
+                <div class="image">
+                    <img src="../files/imgs/home banner/veg.png" alt="">
+                </div>
+    
             </div>
-        </div>
 
-        <div class="second">
-            <div class="container">
-                <p>Created By Radwa Amer | All Rights Reserved!</p>
+            <div class="content">
+
+                <div class="text">
+                    <p>Fresh And Organic</p>
+                    <h2>Upto 50% Off</h2>
+                    <button class="main-btn">Shop Now</button>
+                </div>
+    
+                <div class="image">
+                    <img src="../files/imgs/home banner/pepper.jpg" alt="">
+                </div>
+    
             </div>
-        </div>
 
-    </footer>
+            <div class="content">
+
+                <div class="text">
+                    <p>Fresh And Organic</p>
+                    <h2>Upto 50% Off</h2>
+                    <button class="main-btn">Shop Now</button>
+                </div>
+    
+                <div class="image">
+                    <img src="../files/imgs/home banner/pineapple.jpg" alt="">
+                </div>
+    
+            </div>
+    
+        </section>
+        
+    </section>
 
     <!-- font awesome js file -->
     <link rel="stylesheet" href="../files/js/all.min.js">
     <script src="https://kit.fontawesome.com/c7495e3692.js" crossorigin="anonymous"></script>
     <!-- main js file -->
     <script src="./js/home.js"></script>
+    <!-- footer js file -->
+    <script src="../components/footer.js"></script>
 </body>
 </html>
