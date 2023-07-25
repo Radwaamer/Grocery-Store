@@ -1,12 +1,17 @@
 // break points
 @mixin breakPoints($point){
-    @if $point == "small" {
-        @media (min-width:768px) {
+    @if $point == "mobile" {
+        @media (max-width:767px) {
+            @content;
+        }
+    }
+    @else if $point == "small" {
+        @media (max-width:991px) {
             @content;
         }
     }
     @else if $point == "medium" {
-        @media (min-width:992px) {
+        @media (max-width:1199px){
             @content;
         }
     }
@@ -15,4 +20,23 @@
             @content;
         }
     }
+}
+
+// grid systems
+@mixin grid($num){
+    display: grid;
+    @if $num==3 {
+        $num : 300px;
+    }
+    @else if $num==4 {
+        $num: 250px;
+    }
+    grid-template-columns: repeat(auto-fill, minmax($num,1fr));
+    gap: 1rem;
+}
+
+// flex box
+@mixin flex(){
+    display: flex;
+    align-items: center;
 }

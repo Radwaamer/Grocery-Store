@@ -10,15 +10,13 @@ header{
     z-index: 500;
 
     .container{
-        display: flex;
-        align-items: center;
+        @include flex();
         justify-content: space-between;
         height: 100%;
     
         >{
-            a,ul,div{
-                display: flex;
-                align-items: center;
+            .logo,.menu,.icons{
+                @include flex();
             }
         }
     
@@ -38,8 +36,12 @@ header{
             justify-content: center;
             gap: 1rem;
             height: 100%;
+            transition: $transition;
             li{
                 height: 100%;
+                @include breakPoints("small"){
+                    width: 100%;
+                }
             }
             a{
                 color: $light-grey;
@@ -50,8 +52,28 @@ header{
                     color: $green;
                 }
                 height: 100%;
+                @include flex();
+                @include breakPoints("small"){
+                    width: 100%;
+                    background-color: $background-grey;
+                    padding: 0.8rem;
+                    border-radius: $radius;
+                }
+            }
+            @include breakPoints("small"){
+                position: absolute;
+                flex-direction: column;
+                top: 4.1rem;
+                background-color: $white;
+                width: 100%;
+                left: 0;
+                height: auto;
+                padding: 1rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+            &.active{
                 display: flex;
-                align-items: center;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             }
         }
     
@@ -60,6 +82,12 @@ header{
             color: $dark-grey;
             font-size: 1.1rem;
             i{
+                &:nth-child(1){
+                    display: none;
+                    @include breakPoints("small"){
+                        display: block;
+                    }
+                }
                 &:hover{
                     color: $green;
                     cursor: pointer;
@@ -68,7 +96,7 @@ header{
             }
         }
 
-        form{
+        .search-form{
             visibility: hidden;
             position: absolute;
             bottom: 7rem;
@@ -99,6 +127,97 @@ header{
                 visibility: visible;
                 bottom: -3.5rem;
                 right: 1.6rem;
+            }
+        }
+
+        .shopping,.profile{
+            visibility: hidden;
+            padding: 0.9rem;
+            background-color: $white;
+            position: absolute;
+            top: 4.8rem;
+            right: -20rem;
+            transition: $transition;
+            &.active{
+                visibility: visible;
+                right: 0.7rem;
+            }
+        }
+        .shopping{
+            .items{
+                .item{
+                    @include flex();
+                    gap: 0.8rem;
+                    padding-bottom: 0.8rem;
+                    padding-right: 5.5rem;
+                    position: relative;
+                    img{
+                        width: 5rem;
+                    }
+                    >p{
+                        position: absolute;
+                        top: 30%;
+                        right: 0.8rem;
+                        color: $dark-grey;
+                        font-weight: 700;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        transition: $transition;
+                        &:hover{
+                            color: $green;
+                        }
+                    }
+                }
+            }
+            .total{
+                text-align: center;
+                p{
+                    color: $dark-grey;
+                    font-weight: 600;
+                    margin: 0.7rem 0;
+                    span{
+                        color: $black;
+                    }
+                }
+                button{
+                    width: 100%;
+                }
+            }
+        }
+
+        .profile{
+            h4{
+                text-align: center;
+            }
+            form{
+                padding: 0.9rem 0;
+                max-width: 15rem;
+                font-size: $small-font;
+                input{
+                    padding: 0.4rem;
+                    border: 1px solid rgba(128, 128, 128, 0.242);
+                    width: 100%;
+                    margin-bottom: 0.8rem;
+                    &:nth-child(3){
+                        max-width: 8%;
+                    }
+                }
+                label{
+                    color: $dark-grey;
+                }
+                button{
+                    width: 100%;
+                    margin-top: 0.3rem;
+                    font-size: $small-font;
+                }
+            }
+            p{
+                font-size: $small-font;
+                color: $dark-grey;
+                margin-bottom: 0.5rem;
+                a{
+                    color: $green;
+                }
             }
         }
 

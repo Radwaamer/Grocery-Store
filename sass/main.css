@@ -39,12 +39,12 @@ button {
   margin: 0 auto;
   padding: 0 15px;
 }
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .container {
     width: 750px;
   }
 }
-@media (min-width: 992px) {
+@media (max-width: 1199px) {
   .container {
     width: 970px;
   }
@@ -74,7 +74,7 @@ header .container {
   justify-content: space-between;
   height: 100%;
 }
-header .container > a, header .container > ul, header .container > div {
+header .container > .logo, header .container > .menu, header .container > .icons {
   display: flex;
   align-items: center;
 }
@@ -91,9 +91,15 @@ header .container .menu {
   justify-content: center;
   gap: 1rem;
   height: 100%;
+  transition: 0.3s;
 }
 header .container .menu li {
   height: 100%;
+}
+@media (max-width: 991px) {
+  header .container .menu li {
+    width: 100%;
+  }
 }
 header .container .menu a {
   color: #8C816F;
@@ -107,6 +113,33 @@ header .container .menu a.active {
 header .container .menu a:hover {
   color: #B8B145;
 }
+@media (max-width: 991px) {
+  header .container .menu a {
+    width: 100%;
+    background-color: #F1F3F1;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+  }
+}
+@media (max-width: 991px) {
+  header .container .menu {
+    position: absolute;
+    flex-direction: column;
+    top: 4.1rem;
+    background-color: #FDFEFD;
+    width: 100%;
+    left: 0;
+    height: auto;
+    padding: 1rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+}
+header .container .menu.active {
+  display: flex;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
 header .container .icons {
   gap: 1rem;
   color: #626362;
@@ -115,11 +148,19 @@ header .container .icons {
 header .container .icons i {
   z-index: 2;
 }
+header .container .icons i:nth-child(1) {
+  display: none;
+}
+@media (max-width: 991px) {
+  header .container .icons i:nth-child(1) {
+    display: block;
+  }
+}
 header .container .icons i:hover {
   color: #B8B145;
   cursor: pointer;
 }
-header .container form {
+header .container .search-form {
   visibility: hidden;
   position: absolute;
   bottom: 7rem;
@@ -127,7 +168,7 @@ header .container form {
   width: 25%;
   transition: 0.3s;
 }
-header .container form input {
+header .container .search-form input {
   border: none;
   background-color: #FDFEFD;
   padding: 0.8rem;
@@ -135,7 +176,7 @@ header .container form input {
   border-radius: 0.3rem;
   width: 100%;
 }
-header .container form button {
+header .container .search-form button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -143,13 +184,97 @@ header .container form button {
   color: #626362;
   cursor: pointer;
 }
-header .container form button:hover {
+header .container .search-form button:hover {
   color: #B8B145;
 }
-header .container form.active {
+header .container .search-form.active {
   visibility: visible;
   bottom: -3.5rem;
   right: 1.6rem;
+}
+header .container .shopping, header .container .profile {
+  visibility: hidden;
+  padding: 0.9rem;
+  background-color: #FDFEFD;
+  position: absolute;
+  top: 4.8rem;
+  right: -20rem;
+  transition: 0.3s;
+}
+header .container .shopping.active, header .container .profile.active {
+  visibility: visible;
+  right: 0.7rem;
+}
+header .container .shopping .items .item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-right: 5.5rem;
+  position: relative;
+}
+header .container .shopping .items .item img {
+  width: 5rem;
+}
+header .container .shopping .items .item > p {
+  position: absolute;
+  top: 30%;
+  right: 0.8rem;
+  color: #626362;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+header .container .shopping .items .item > p:hover {
+  color: #B8B145;
+}
+header .container .shopping .total {
+  text-align: center;
+}
+header .container .shopping .total p {
+  color: #626362;
+  font-weight: 600;
+  margin: 0.7rem 0;
+}
+header .container .shopping .total p span {
+  color: #22211F;
+}
+header .container .shopping .total button {
+  width: 100%;
+}
+header .container .profile h4 {
+  text-align: center;
+}
+header .container .profile form {
+  padding: 0.9rem 0;
+  max-width: 15rem;
+  font-size: 0.8rem;
+}
+header .container .profile form input {
+  padding: 0.4rem;
+  border: 1px solid rgba(128, 128, 128, 0.242);
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+header .container .profile form input:nth-child(3) {
+  max-width: 8%;
+}
+header .container .profile form label {
+  color: #626362;
+}
+header .container .profile form button {
+  width: 100%;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+}
+header .container .profile p {
+  font-size: 0.8rem;
+  color: #626362;
+  margin-bottom: 0.5rem;
+}
+header .container .profile p a {
+  color: #B8B145;
 }
 
 footer .first {
@@ -166,8 +291,8 @@ footer .first .container h3 {
 }
 footer .first .container ul li a {
   display: flex;
-  gap: 0.8rem;
   align-items: center;
+  gap: 0.8rem;
   color: #8C816F;
   padding: 0.4rem 0;
   width: 100%;
@@ -230,12 +355,53 @@ button.main-btn:hover {
   color: #FDFEFD;
 }
 
+.title {
+  background-image: url(../../assets/images/title.avif);
+  background-size: cover;
+  margin-bottom: 2rem;
+}
+.title .layout {
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.title .layout h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.title .layout p span {
+  color: #626362;
+}
+.title .layout p a:hover {
+  color: #B8B145;
+}
+
+.our-section .container div {
+  display: flex;
+  justify-content: space-between;
+}
+.our-section .container div h3 {
+  text-transform: capitalize;
+}
+.our-section .container div h3 span {
+  color: #B8B145;
+}
+.our-section .container div a {
+  color: #626362;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.our-section .container hr {
+  border-color: rgba(221, 221, 221, 0.17);
+  margin: 0.7rem 0 1.5rem;
+}
+
 @keyframes bannerText {
   from {
     left: -24rem;
   }
   to {
-    left: 6rem;
+    left: 0rem;
   }
 }
 @keyframes bannerImg {
@@ -254,14 +420,15 @@ button.main-btn:hover {
 }
 .home .controls {
   z-index: 2;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.home .controls .left, .home .controls .right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  width: 100%;
+}
+.home .controls .left, .home .controls .right {
   cursor: pointer;
   background-color: #FDFEFD;
   padding: 0.7rem 0.9rem;
@@ -272,11 +439,12 @@ button.main-btn:hover {
   background-color: #B8B145;
   color: #FDFEFD;
 }
-.home .controls .left {
-  left: 1rem;
-}
-.home .controls .right {
-  right: 1rem;
+@media (max-width: 991px) {
+  .home .controls {
+    top: 94%;
+    justify-content: flex-end;
+    gap: 0.8rem;
+  }
 }
 .home .content {
   height: 100%;
@@ -290,7 +458,8 @@ button.main-btn:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 6rem;
+  left: 1rem;
+  padding-left: 5rem;
   animation: bannerText 1.5s;
 }
 .home .content .text p {
@@ -300,6 +469,11 @@ button.main-btn:hover {
 .home .content .text h2 {
   font-size: 2.5rem;
   margin: 1rem 0;
+}
+@media (max-width: 991px) {
+  .home .content .text {
+    padding-left: 0;
+  }
 }
 .home .content .image {
   height: 100%;
@@ -311,4 +485,68 @@ button.main-btn:hover {
      object-fit: cover;
   -o-object-position: right;
      object-position: right;
+}
+.home .categories {
+  padding: 1.5rem 0;
+}
+.home .categories .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.home .categories .container .cat {
+  background-size: cover;
+  background-position: right;
+  padding: 4rem 0.9rem;
+  transition: 0.3s;
+}
+.home .categories .container .cat:hover {
+  transform: scale(1.03);
+}
+.home .categories .container .cat:nth-child(1) {
+  background-image: url(../../assets/images/home\ banner/veg.png);
+}
+.home .categories .container .cat:nth-child(2) {
+  background-image: url(../../assets/images/home\ banner/pepper.jpg);
+}
+.home .categories .container .cat:nth-child(3) {
+  background-image: url(../../assets/images/home\ banner/pineapple.jpg);
+}
+.home .categories .container .cat p {
+  color: #8C816F;
+  font-size: 0.8rem;
+}
+.home .categories .container .cat h4 {
+  margin: 0.4rem 0;
+}
+.home .categories .container .cat button {
+  font-size: 0.8rem;
+}
+
+.shop .cats {
+  margin: 3rem 0 5rem;
+}
+.shop .cats .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.shop .cats .container .cat {
+  cursor: pointer;
+  text-align: center;
+}
+.shop .cats .container .cat img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+.shop .cats .container .cat a {
+  display: block;
+  margin: 1rem 0;
+  font-weight: 600;
+  color: #626362;
+}
+.shop .cats .container .cat:hover a {
+  color: #B8B145;
 }/*# sourceMappingURL=main.css.map */

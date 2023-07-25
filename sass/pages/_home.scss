@@ -3,7 +3,7 @@
         left: -24rem;
     }
     to{
-        left: 6rem;
+        left: 0rem;
     }
 }
 
@@ -26,14 +26,15 @@
 
     .controls{
         z-index: 2;
-        position: relative;
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        width: 100%;
 
         .left,.right{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
             cursor: pointer;
             background-color: $white;
             padding: 0.7rem 0.9rem;
@@ -44,12 +45,10 @@
                 color: $white;
             }
         }
-        $position: 1rem;
-        .left{
-            left: $position;
-        }
-        .right{
-            right: $position;
+        @include breakPoints("small"){
+            top: 94%;
+            justify-content: flex-end;
+            gap: 0.8rem;
         }
     }
 
@@ -64,7 +63,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 6rem;
+            left: 1rem;
+            padding-left: 5rem;
             animation: bannerText 1.5s;
             p{
                 color: $light-grey;
@@ -73,6 +73,9 @@
             h2{
                 font-size: 2.5rem;
                 margin: 1rem 0;
+            }
+            @include breakPoints("small"){
+                padding-left: 0;
             }
         }
 
@@ -83,6 +86,42 @@
                 height: 100%;
                 object-fit: cover;
                 object-position: right;
+            }
+        }
+    }
+
+
+    .categories{
+        padding: 1.5rem 0;
+        .container{
+            @include grid(3);
+            .cat{
+                background-size: cover;
+                background-position: right;
+                padding: 4rem 0.9rem;
+                transition: $transition;
+                &:hover{
+                    transform: scale(1.03);
+                }
+                &:nth-child(1){
+                    background-image: url(../../assets/images/home\ banner/veg.png);
+                }
+                &:nth-child(2){
+                    background-image: url(../../assets/images/home\ banner/pepper.jpg);
+                }
+                &:nth-child(3){
+                    background-image: url(../../assets/images/home\ banner/pineapple.jpg);
+                }
+                p{
+                    color: $light-grey;
+                    font-size: $small-font;
+                }
+                h4{
+                    margin: 0.4rem 0;
+                }
+                button{
+                    font-size: $small-font;
+                }
             }
         }
     }

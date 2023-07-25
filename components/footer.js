@@ -120,9 +120,9 @@ document.body.innerHTML+=`
                         <button class="main-btn" type="submit">Submit</button>
                     </form>
                     <div class="payment">
-                        <a href=""><img src="../files/imgs/payment methods/Visa.svg.png" alt="Visa"></a>
-                        <a href=""><img src="../files/imgs/payment methods/MasterCard.svg.webp" alt="MasterCard"></a>
-                        <a href=""><img src="../files/imgs/payment methods/PayPal.svg.png" alt="PayPal"></a>
+                        <a href=""><img src="../assets/images/payment methods/Visa.svg.png" alt="Visa"></a>
+                        <a href=""><img src="../assets/images/payment methods/MasterCard.svg.webp" alt="MasterCard"></a>
+                        <a href=""><img src="../assets/images/payment methods/PayPal.svg.png" alt="PayPal"></a>
                     </div>
                 </div>
 

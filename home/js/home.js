@@ -1,7 +1,3 @@
-function searchForm(){
-        document.querySelector("header form").classList.toggle("active");
-};
-
 let bannerIndex=0;
 let bannerArrow="next";
 function bannerScroll(){

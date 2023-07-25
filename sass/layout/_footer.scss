@@ -6,19 +6,16 @@ footer{
     // width: 100%;
 
     .first{
-        background-color: #F1F3F1;
+        background-color: $background-grey;
         padding: 2rem 0 3rem;
         .container{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-            gap: 1rem;
+            @include grid(4);
             h3{
                 margin-bottom: 1rem;
             }
             ul li a{
-                display: flex;
+                @include flex();
                 gap: 0.8rem;
-                align-items: center;
                 color: $light-grey;
                 padding: 0.4rem 0;
                 width: 100%;

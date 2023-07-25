@@ -1,0 +1,23 @@
+.our-section{
+    .container{
+        div{
+            display: flex;
+            justify-content: space-between;
+            h3{
+                text-transform: capitalize;
+                span{
+                    color: $green;
+                }
+            }
+            a{
+                color: $dark-grey;
+                font-size: $small-font;
+                font-weight: 600;
+            }
+        }
+        hr{
+            border-color: rgb(221 221 221 / 17%);
+            margin: 0.7rem 0 1.5rem;
+        }
+    }
+}

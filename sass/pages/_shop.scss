@@ -1,0 +1,28 @@
+.shop{
+    .cats{
+        margin: 3rem 0 5rem;
+        .container{
+            @include flex();
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .cat{
+                cursor: pointer;
+                text-align: center;
+                img{
+                    width: 8rem;
+                    height: 8rem;
+                    border-radius: 50%;
+                }
+                a{
+                    display: block;
+                    margin: 1rem 0;
+                    font-weight: 600;
+                    color: $dark-grey;
+                }
+                &:hover a{
+                    color: $green;
+                }
+            }
+        }
+    }
+}
