@@ -523,6 +523,9 @@ button.main-btn:hover {
   font-size: 0.8rem;
 }
 
+.shop {
+  margin-bottom: 1.5rem;
+}
 .shop .cats {
   margin: 3rem 0 5rem;
 }
@@ -549,4 +552,67 @@ button.main-btn:hover {
 }
 .shop .cats .container .cat:hover a {
   color: #B8B145;
+}
+.shop .prods {
+  overflow: hidden;
+}
+.shop .prods .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.shop .prods .container .pro {
+  background-color: #F1F3F1;
+  padding: 0.5rem;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+.shop .prods .container .pro img {
+  width: 100%;
+  margin: 1.5rem 0;
+  height: 16rem;
+}
+.shop .prods .container .pro p {
+  font-weight: 600;
+}
+.shop .prods .container .pro span {
+  color: #8C816F;
+  margin: 0.4rem 0;
+  display: block;
+}
+.shop .prods .container .pro .rate {
+  color: #B8B145;
+  font-size: 0.8rem;
+}
+.shop .prods .container .pro .overlay {
+  visibility: hidden;
+  background-color: rgba(250, 250, 250, 0.8588235294);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  transition: 0.3s;
+}
+.shop .prods .container .pro .overlay .options {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.shop .prods .container .pro .overlay .options i {
+  color: #626362;
+  background-color: white;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  transition: color 0.3s, background-color 0.3s;
+}
+.shop .prods .container .pro .overlay .options i:hover {
+  color: #FDFEFD;
+  background-color: #B8B145;
+}
+.shop .prods .container .pro:hover .overlay {
+  visibility: visible;
+  height: 75%;
 }/*# sourceMappingURL=main.css.map */
