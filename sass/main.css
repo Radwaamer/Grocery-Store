@@ -615,4 +615,75 @@ button.main-btn:hover {
 .shop .prods .container .pro:hover .overlay {
   visibility: visible;
   height: 75%;
+}
+
+.about {
+  margin-bottom: 1.5rem;
+}
+.about .our-shop {
+  margin-bottom: 5rem;
+}
+.about .our-shop .container {
+  display: flex;
+  gap: 1rem;
+}
+.about .our-shop .container .image {
+  flex: 1;
+}
+.about .our-shop .container .image img {
+  width: 100%;
+}
+.about .our-shop .container .text {
+  flex: 1;
+}
+.about .our-shop .container .text h3 {
+  color: #8C816F;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+.about .our-shop .container .text p {
+  color: #626362;
+  line-height: 1.8;
+  margin: 0.7rem 0;
+}
+.about .gallery .our-gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.about .gallery .our-gallery .container .box {
+  position: relative;
+}
+.about .gallery .our-gallery .container .box img {
+  width: 100%;
+  height: 100%;
+}
+.about .gallery .our-gallery .container .box .icons {
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.8941176471);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.7rem;
+  font-size: 1.1rem;
+  padding: 0rem;
+  transition: 0.3s;
+}
+.about .gallery .our-gallery .container .box .icons i {
+  cursor: pointer;
+  display: none;
+  transition: 0.3s;
+}
+.about .gallery .our-gallery .container .box .icons i:hover {
+  color: #B8B145;
+}
+.about .gallery .our-gallery .container .box:hover .icons {
+  padding: 0.8rem;
+}
+.about .gallery .our-gallery .container .box:hover i {
+  display: block;
 }/*# sourceMappingURL=main.css.map */
